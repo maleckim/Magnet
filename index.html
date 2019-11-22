@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Magnet - The place to find your travel info!</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Teko&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    
+
+
+
+</head>
+<body>
+    
+    <main>
+    <div class="bg-image"></div>
+    <section class="homePage">
+        <h3>MAGNET</h3>
+        <h5>YOUR VACATION TRAVEL GUIDE</h5>
+
+        
+        <div class="searchBox">
+            <input type="text" class ="search" placeholder="Enter the city you will be flying from!">
+            <button type="submit" class ="locEnter">
+            <i class="fas fa-plane-departure"></i>
+            </button>
+            <br>
+        
+        </div>
+
+        <!-- <div class = 'weather'>
+                
+         </div> -->
+
+       
+    </section>
+
+    <section class = "parameterPage hidden">
+
+        <form class = "params">
+                <h4>IN ORDER FOR MAGNET TO PERSONALIZE YOUR SEARCH PLEASE ENTER THE DETAILS BELOW:</h4>
+                <input type="text" class ="search dest" placeholder="Enter the abbreviated name of your destination">
+                <input type="text" class ="search city" placeholder="Enter the full city name of your destination">
+                <input type="text" class ="search from" placeholder="From date.. (dd/mm/yyyy)">
+                <input type="text" class ="search to" placeholder="To date..(dd/mm/yyyy)">
+                <input type="submit"  class="paramEnter">
+                <!--
+                <input type="submit" class="paramSubmit" src="https://icon-library.net/images/submit-icon-png/submit-icon-png-26.jpg" border="0">
+                -->
+        </form>
+
+    </section>
+
+    <section class = 'resultsPage hidden'>
+        
+        
+        <div class = 'flightResults'>
+            
+        </div>
+        
+        <div class = 'restaurantResults'>
+            
+        </div>
+       
+        <div class = 'weatherResults'>
+            
+        </div>
+
+    </section>
+
+
+    </main>
+    <!-- Misc Links here -->
+    <footer></footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src='test.js'></script>
+</body>
+</html>
