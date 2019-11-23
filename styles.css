@@ -65,6 +65,38 @@ img {
 
 }
 
+.topheaders h4 {
+    /*
+    position: absolute;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    width: 80vw;
+    text-align: center;
+    font-size:100px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.4);
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    top: 15vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    padding: 10px;
+    */
+    
+    position: relative;
+    color:deepskyblue;
+    top: 35vh;
+    width: 80vw;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 24px;
+    text-align: center;
+    
+}
 
 .homePage h3 {
     position: absolute;
@@ -236,7 +268,7 @@ img {
 }
 
 .resultsPage div {
-    margin-bottom:10vh;
+    margin-bottom:4vh;
 }
 
 .resultsPage h1 {
