@@ -135,25 +135,25 @@ function weatherForecast(responseJson){
 }
 
 
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.watchPosition(showPosition);
-  } else {
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-}
-function showPosition(position) {
+// function getLocation() {
+//   if (navigator.geolocation) {
+//     navigator.geolocation.watchPosition(showPosition);
+//   } else {
+//     x.innerHTML = "Geolocation is not supported by this browser.";
+//   }
+// }
+// function showPosition(position) {
     
-   let lat = position.coords.latitude;
-   let long = position.coords.longitude;
+//    let lat = position.coords.latitude;
+//    let long = position.coords.longitude;
     
-   genericFetch(`http://api.weatherstack.com/current?access_key=8bbdbccbbeab9c6104711906071d37fe&query=${lat},${long}&units=f`,showWeatherOnMain)
+//    genericFetch(`http://api.weatherstack.com/current?access_key=8bbdbccbbeab9c6104711906071d37fe&query=${lat},${long}&units=f`,showWeatherOnMain)
 
-}
+// }
 
-function showWeatherOnMain(responseJson){
-    $('.homePage').find('.weather').append(`current temperature is ${responseJson.current.temperature}, let's change that`)   
-}
+// function showWeatherOnMain(responseJson){
+//     $('.homePage').find('.weather').append(`current temperature is ${responseJson.current.temperature}, let's change that`)   
+// }
 
 function domReady(){
     $(nextPage);

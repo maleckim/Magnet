@@ -29,6 +29,12 @@ main {
     height:100vh;
 }
 
+.homePage button {
+    background:none;
+    background-color:transparent;
+    border:none;
+}
+
 img {
     height: 25px;
     width: 25px;
@@ -341,7 +347,9 @@ a:visited {
     }
     .locEnter{
         background:none;
+        background-color:transparent;
         border:none;
+        padding:none;
     }
 
     .locEnter i {
@@ -386,6 +394,13 @@ a:visited {
         margin-top:12vh;
     }
 
+    .locEnter{
+        background:none;
+        background-color:transparent;
+        border:none;
+        
+    }
+
     .locEnter i {
         padding:15px;
         border:solid deepskyblue 2px;
@@ -397,6 +412,9 @@ a:visited {
         padding-top:13px;
         padding-bottom:10px;
         border:1px solid deepskyblue;
+        margin-left:auto;
+        margin-right:auto;
+        width:100%;
     }
 
     .parameterPage h4 {
@@ -439,6 +457,12 @@ a:visited {
        font-size:20px;
    }
 
+   .paramEnter {
+    margin-left:auto;
+    margin-right:auto;
+    width:100%;
+   }
+
 }
 
 @media only screen and
@@ -472,6 +496,9 @@ a:visited {
         padding-top:13px;
         padding-bottom:10px;
         border:1px solid deepskyblue;
+        margin-left:auto;
+        margin-right:auto;
+        width:100%;
     }
 
 }
