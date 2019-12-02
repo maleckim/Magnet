@@ -54,10 +54,10 @@ function genericFetch(url, callback) {
         .then(responseJSON => {
             callback(responseJSON);
         })
-        .catch(error => {
-            if(alert('If you\'re having an issue, for the destination name, try the airport name. Example (LA -> LAX)')){}
-            else {window.location.reload()}
-        })
+        // .catch(error => {
+        //     if(alert('If you\'re having an issue, for the destination name, try the airport name. Example (LA -> LAX)')){}
+        //     else {window.location.reload()}
+        // })
         
 
 }
@@ -86,7 +86,7 @@ function genericFetchOptions(url, callback) {
 }
 
 function generateFlightURL() {
-    let url = `https://api.skypicker.com/flights?fly_from=city:${flyFrom}&fly_to=city:${flyTo}&partner=picky&curr=USD&currency=USD&date_from=${fromDate}&date_to=${toDate}&conversion=USD&partner_market=US&limit=5`
+    let url = `http://api.skypicker.com/flights?fly_from=city:${flyFrom}&fly_to=city:${flyTo}&partner=picky&curr=USD&currency=USD&date_from=${fromDate}&date_to=${toDate}&conversion=USD&partner_market=US&limit=5`
     return url
 }
 
@@ -129,7 +129,7 @@ function restaurantFetch(city) {
 }
 
 function weatherFetch() {
-    let url = `https://api.weatherstack.com/current?access_key=ed299871e432d599fc8c3a5bdfa4f859&query=${flyTo}&units=f`
+    let url = `http://api.weatherstack.com/current?access_key=ed299871e432d599fc8c3a5bdfa4f859&query=${flyTo}&units=f`
 
 
     genericFetch(url, weatherForecast)
