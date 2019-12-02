@@ -26,7 +26,9 @@ function getParams() {
         flyTo = $('.dest').val();
         flyTo = flyTo.toUpperCase();
         fromDate = $('.from').val();
+        fromDate = fromDate.split('-').reverse().join('/');
         toDate = $('.to').val();
+        toDate = toDate.split('-').reverse().join('/');
         city = $('.city').val();
         $('.parameterPage').hide();
         flightFetcher();
@@ -51,7 +53,12 @@ function genericFetch(url, callback) {
         })
         .then(responseJSON => {
             callback(responseJSON);
-        });
+        })
+        .catch(error => {
+            if(alert('If you\'re having an issue, for the destination name, try the airport name. Example (LA -> LAX)')){}
+            else {window.location.reload()}
+        })
+        
 
 }
 
@@ -73,7 +80,8 @@ function genericFetchOptions(url, callback) {
         })
         .then(responseJSON => {
             callback(responseJSON);
-        });
+        })
+        
 
 }
 
@@ -130,8 +138,8 @@ function weatherFetch() {
 
 function weatherForecast(responseJson) {
 
-    $('.resultsPage').find('.weatherResults').append(`<p>Current Temp - ${responseJson.current.temperature}</p><p> Feels Like - ${responseJson.current.feelslike}</p>
-    <p>Humidity - ${responseJson.current.humidity}</p><p>${responseJson.current.weather_descriptions}</p>`)
+    $('.resultsPage').find('.weatherResults').append(`<ul><li>Current Temp - ${responseJson.current.temperature}</li><li> Feels Like - ${responseJson.current.feelslike}</li>
+    <li>Humidity - ${responseJson.current.humidity}</li><li>${responseJson.current.weather_descriptions}</li>`)
 }
 
 
