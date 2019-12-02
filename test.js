@@ -129,7 +129,7 @@ function restaurantFetch(city) {
 }
 
 function weatherFetch() {
-    let url = `http://api.weatherstack.com/current?access_key=ed299871e432d599fc8c3a5bdfa4f859&query=${flyTo}&units=f`
+    let url = `https://api.weatherstack.com/current?access_key=ed299871e432d599fc8c3a5bdfa4f859&query=${flyTo}&units=f`
 
 
     genericFetch(url, weatherForecast)
