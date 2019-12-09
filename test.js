@@ -128,10 +128,10 @@ function restaurantFetch(city) {
     genericFetchOptions(url, restaurantCityCallback)
 }
 
-//https://meet.google.com/linkredirect?authuser=0&dest=https%3A%2F%2Fsunrise-sunset.org%2Fapi
+
 
 function weatherFetch() {
-    //let url = `http://api.weatherstack.com/current?access_key=ed299871e432d599fc8c3a5bdfa4f859&query=${flyTo}&units=f`
+    
       let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=9de243494c0b295cca9337e1e96b00e2`
 
     genericFetch(url, weatherForecast)
@@ -140,7 +140,7 @@ function weatherFetch() {
 
 function weatherForecast(responseJson) {
     $('.resultsPage').find('.weatherResults').append(`<ul><li>High - ${responseJson.main.temp_max}</li><li> Low - ${responseJson.main.temp_min}</li>
-    <li>Humidity - ${responseJson.main.humidity}%</li><li>Description-${responseJson.weather[0].description}</li>`)
+    <li>Humidity - ${responseJson.main.humidity}%</li><li>Description - ${responseJson.weather[0].description}</li>`)
 }
 
 
