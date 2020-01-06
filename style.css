@@ -8,9 +8,12 @@ html{
   height:100vh;
   width:100vw;
   background-image: url("https://cdn.pixabay.com/photo/2017/12/15/13/51/polynesia-3021072_1280.jpg");
-  background-size:350%, 200%;
-}
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 
+}
 
 
 .hidden{
@@ -98,6 +101,8 @@ html{
 }
 
 span{
+  color:white;
+  background:rgba(0,0,0,.5);
   margin-left: auto;
   margin-right:auto;
 }
