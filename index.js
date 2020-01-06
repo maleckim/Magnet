@@ -41,6 +41,7 @@ function getParams() {
 }
 
 
+
 function genericFetch(url, callback) {
 
     fetch(url)

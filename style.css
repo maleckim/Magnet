@@ -56,7 +56,10 @@ html{
 
 .params input[type=text], input[type=date]{
   font-size:15px;
-  height:20px
+  width:65vw;
+  height:20px;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .resultsPage {
@@ -93,6 +96,14 @@ html{
 .weatherResults{
   color:white;
 }
+
+span{
+  margin-left: auto;
+  margin-right:auto;
+}
+
+
+
 
 @media only screen and 
 (min-width: 700px)
