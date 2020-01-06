@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Magnet - The place to find your travel info!</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Teko&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
 
@@ -18,19 +18,19 @@
 <body>
 
     <main>
-        <div class="bg-image"></div>
+        
         <section class="homePage">
 
             <div class="topheaders">
                 <h3>MAGNET</h3>
-                <h5>YOUR VACATION TRAVEL GUIDE</h5>
-                <h4>Magnet helps you find your travel information all in one place. Try a search?</h4>
+                
+                
             </div>
 
 
 
             <div class="searchBox">
-                <input type="text" class="search" placeholder="Enter the abreviated city you will be flying from! eg. chi">
+                <input type="text" class="frontsearch" placeholder="Enter the abreviated city you will be flying from! eg. chi">
                 <button type="submit" class="locEnter">
                     <i class="fas fa-plane-departure"></i>
                 </button>
@@ -45,9 +45,10 @@
 
         <section class="parameterPage hidden">
 
-            <form class="params">
-                <h4>IN ORDER FOR MAGNET TO PERSONALIZE YOUR SEARCH PLEASE ENTER THE DETAILS BELOW:</h4>
+            <h4>IN ORDER FOR MAGNET TO PERSONALIZE YOUR SEARCH PLEASE ENTER THE DETAILS BELOW:</h4>
 
+            <form class="params">
+                
                 <input type="text" class="search dest" placeholder="Enter the abbreviated name of your destination">
                 <input type="text" class="search city" placeholder="Enter the full city name of your destination">
                 <input type="date" format = 'DD-MM-YYYY' class="search from" placeholder="From date.. (dd/mm/yyyy)">
@@ -61,13 +62,17 @@
         <section class='resultsPage hidden'>
             <h1>FLIGHTS TO YOUR DESTINATION</h1>
             <div class='flightResults'>
+                <ul class='fRes'>
 
+                </ul>
             </div>
             <h1>HUNGRY? LOCAL RESTAURANTS</h1>
             <div class='restaurantResults'>
+                <ul class='rRes'>
 
+                </ul>
             </div>
-            <h1>CURRENT WEATHER</h1>
+            <h1 class='wReport'>CURRENT WEATHER</h1>
             <div class='weatherResults'>
 
             </div>
@@ -81,7 +86,7 @@
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src='test.js'></script>
+    <script src='index.js'></script>
 </body>
 
 </html>

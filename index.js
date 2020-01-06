@@ -13,7 +13,7 @@ const options = {
 
 function nextPage() {
     $('.locEnter').on('click', function (e) {
-        flyFrom = $('input[class="search"]').val();
+        flyFrom = $('input[class="frontsearch"]').val();
         flyFrom = flyFrom.toUpperCase();
         $('.homePage').hide();
         $('.parameterPage').show();
@@ -86,7 +86,7 @@ function genericFetchOptions(url, callback) {
 }
 
 function generateFlightURL() {
-    let url = `https://api.skypicker.com/flights?fly_from=city:${flyFrom}&fly_to=city:${flyTo}&partner=picky&curr=USD&currency=USD&date_from=${fromDate}&date_to=${toDate}&conversion=USD&partner_market=US&limit=5`
+    let url = `https://api.skypicker.com/flights?fly_from=city:${flyFrom}&fly_to=city:${flyTo}&partner=picky&curr=USD&currency=USD&date_from=${fromDate}&date_to=${toDate}&conversion=USD&partner_market=US&limit=3`
     return url
 }
 
@@ -94,7 +94,7 @@ function displayFlightResults(responseJson) {
     for (let i = 0; i < responseJson.data.length; i++) {
         $('.test').hide();
         $('.resultsPage').show();
-        $('.resultsPage').find('.flightResults').append(`<a target="blank" href=${responseJson.data[i].deep_link}> ${responseJson.data[i].flyFrom}=>${responseJson.data[i].flyTo} </a>`)
+        $('.resultsPage').find('.fRes').append(`<li><a target="blank" href=${responseJson.data[i].deep_link}> ${responseJson.data[i].flyFrom}=>${responseJson.data[i].flyTo} </a></li>`)
     }
 }
 
@@ -110,7 +110,7 @@ function restaurantCityCallback(responseJson) {
 
     let id = responseJson.location_suggestions[0].city_id
 
-    let url = (`https://developers.zomato.com/api/v2.1/search?entity_id=${id}&entity_type=city&q=food&count=5,options`)
+    let url = (`https://developers.zomato.com/api/v2.1/search?entity_id=${id}&entity_type=city&q=food&count=3,options`)
 
     genericFetchOptions(url, displayRestaurantResults)
 }
@@ -118,7 +118,7 @@ function restaurantCityCallback(responseJson) {
 function displayRestaurantResults(responseJson) {
     for (let i = 0; i < 5; i++) {
 
-        $('.resultsPage').find('.restaurantResults').append(`<a target= "blank" href=${responseJson.restaurants[i].restaurant.url}> ${responseJson.restaurants[i].restaurant.name} - ${responseJson.restaurants[i].restaurant.user_rating['aggregate_rating']}*</a>`)
+        $('.resultsPage').find('.rRes').append(`<li><a target= "blank" href=${responseJson.restaurants[i].restaurant.url}> ${responseJson.restaurants[i].restaurant.name} - ${responseJson.restaurants[i].restaurant.user_rating['aggregate_rating']}*</a></li>`)
     }
 }
 
@@ -139,8 +139,10 @@ function weatherFetch() {
 }
 
 function weatherForecast(responseJson) {
+    $('.resultsPage').find('.wReport').append(` in ${city}`)
     $('.resultsPage').find('.weatherResults').append(`<ul><li>High - ${responseJson.main.temp_max}</li><li> Low - ${responseJson.main.temp_min}</li>
     <li>Humidity - ${responseJson.main.humidity}%</li><li>Description - ${responseJson.weather[0].description}</li>`)
+    
 }
 
 
