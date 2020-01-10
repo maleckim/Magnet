@@ -3,7 +3,7 @@
 https://maleckim.github.io/Magnet/
 
 
-![home](https://maleckim.github.com/Magnet/images/HomePage.PNG)
+<img src='https://github.com/maleckim/Magnet/images/HomePage.PNG'>
 ![Search](https://maleckim.github.com/Magnet/images/SearchParameters.PNG)
 ![Results](https://maleckim.github.com/Magnet/images/Results.PNG)
 
