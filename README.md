@@ -2,10 +2,13 @@
 
 https://maleckim.github.io/Magnet/
 
-
+homepage:
 <img src='https://github.com/maleckim/Magnet/raw/master/images/HomePage.PNG'>
-![Search](https://maleckim.github.com/Magnet/images/SearchParameters.PNG)
-![Results](https://maleckim.github.com/Magnet/images/Results.PNG)
+searchpage:
+<img src='https://github.com/maleckim/Magnet/raw/master/images/SearchParameters.PNG'>
+resultspage:
+<img src='https://github.com/maleckim/Magnet/raw/master/images/Results.PNG'>
+
 
 Summary: This is a simple travel app which helps give some information on possible travel plans. You input your departure airport[home],
 from there you are taken to a page[Search] which requires the destination airport, and two dates (for flight information) and a city name
