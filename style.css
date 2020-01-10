@@ -20,6 +20,17 @@ html{
   display:none;
 }
 
+a:hover{
+  cursor:pointer;
+}
+.help{
+  position: absolute;
+  color:white;
+  font-size: 15px;
+  top:15px;
+  right:15px;
+}
+
 
 .topheaders{
   color:white;
@@ -46,6 +57,10 @@ html{
 .parameterPage h4{
   color:white;
   font-size:22px;
+  text-align: center;
+}
+
+.parameterPage h2{
   text-align: center;
 }
 .params{

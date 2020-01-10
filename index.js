@@ -4,6 +4,8 @@ let fromDate = null;
 let toDate = null;
 let city = null;
 
+
+
 const options = {
 
     headers: new Headers({
@@ -11,12 +13,29 @@ const options = {
     })
 };
 
+let valid = function (e) {
+    if (e.length != 3) {
+        return false
+    }
+    e = e.replace(/[a-z]/gi, '');
+    if (e.length === 0) {
+        return true;
+    }
+    return false;
+}
+
 function nextPage() {
     $('.locEnter').on('click', function (e) {
         flyFrom = $('input[class="frontsearch"]').val();
         flyFrom = flyFrom.toUpperCase();
-        $('.homePage').hide();
-        $('.parameterPage').show();
+
+        if (valid(flyFrom)) {
+            $('.homePage').hide();
+            $('.parameterPage').show();
+            $('.parameterPage').find('.departure').append(` ${flyFrom}`)
+        } else {
+            alert(`that is not valid airport code format.`)
+        }
     });
 }
 
@@ -30,10 +49,14 @@ function getParams() {
         toDate = $('.to').val();
         toDate = toDate.split('-').reverse().join('/');
         city = $('.city').val();
-        $('.parameterPage').hide();
-        flightFetcher();
-        restaurantFetch(city);
-        weatherFetch();
+        if (valid(flyTo)) {
+            $('.parameterPage').hide();
+            flightFetcher();
+            restaurantFetch(city);
+            weatherFetch();
+        } else {
+            alert('please enter a valid airport code.')
+        }
 
 
     })
@@ -51,15 +74,16 @@ function genericFetch(url, callback) {
             }
 
             throw Error(response.statusText);
+
         })
         .then(responseJSON => {
             callback(responseJSON);
         })
         .catch(error => {
-            if(alert('If you\'re having an issue, for the destination name, try the airport name. Example (LA -> LAX)')){}
-            else {window.location.reload()}
+            if (alert(`${flyTo} is not a valid entry. Make sure you are entering the airport code`)) { }
+            else { $('.parameterPage').show() }
         })
-        
+
 
 }
 
@@ -76,13 +100,16 @@ function genericFetchOptions(url, callback) {
             if (response.ok) {
                 return response.json();
             }
-
             throw Error(response.statusText);
         })
         .then(responseJSON => {
             callback(responseJSON);
         })
-        
+        .catch(error => {
+            alert(`${city} is not a valid city, please check your spelling`)
+            $('.parameterPage').show()
+        })
+
 
 }
 
@@ -95,7 +122,8 @@ function displayFlightResults(responseJson) {
     for (let i = 0; i < responseJson.data.length; i++) {
         $('.test').hide();
         $('.resultsPage').show();
-        $('.resultsPage').find('.fRes').append(`<li><a target="blank" href=${responseJson.data[i].deep_link}> ${responseJson.data[i].flyFrom}=>${responseJson.data[i].flyTo} </a></li>`)
+        $('.resultsPage').find('.fRes').append(`<li><a target="blank" href=${responseJson.data[i].deep_link}> ${responseJson.data[i].flyFrom}=>${responseJson.data[i].flyTo}</a> Price:$ ${responseJson.data[i].price}</li>`)
+        $('.newSearch').show()
     }
 }
 
@@ -132,8 +160,8 @@ function restaurantFetch(city) {
 
 
 function weatherFetch() {
-    
-      let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=9de243494c0b295cca9337e1e96b00e2`
+
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=9de243494c0b295cca9337e1e96b00e2`
 
     genericFetch(url, weatherForecast)
 
@@ -143,7 +171,14 @@ function weatherForecast(responseJson) {
     $('.resultsPage').find('.wReport').append(` in ${city}`)
     $('.resultsPage').find('.weatherResults').append(`<ul><li>High - ${responseJson.main.temp_max}</li><li> Low - ${responseJson.main.temp_min}</li>
     <li>Humidity - ${responseJson.main.humidity}%</li><li>Description - ${responseJson.weather[0].description}</li>`)
-    
+
+}
+
+function newSearch() {
+    $('.newSearch').on('click', function (e) {
+        $('.newSearch').hide()
+        $('.homePage').show()
+    })
 }
 
 
@@ -153,6 +188,7 @@ function weatherForecast(responseJson) {
 function domReady() {
     $(nextPage);
     $(getParams);
+    $(newSearch);
 }
 
 $(domReady);

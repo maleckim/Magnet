@@ -17,6 +17,11 @@
 
 <body>
 
+    <header>
+        <button class="newSearch hidden">New Search?</button>
+        <a class='help' target= '_blank' href='http://www.leonardsguide.com/us-airport-codes.shtml'>Dont know your airport code? Click Here</a>
+    </header>
+
     <main>
         
         <section class="homePage">
@@ -30,7 +35,7 @@
 
 
             <div class="searchBox">
-                <input type="text" class="frontsearch" placeholder="Enter the abreviated city you will be flying from! eg. chi">
+                <input type="text" class="frontsearch" placeholder="Enter the airport code for your departure airport">
                 <button type="submit" class="locEnter">
                     <i class="fas fa-plane-departure"></i>
                 </button>
@@ -48,8 +53,8 @@
             <h4>IN ORDER FOR MAGNET TO PERSONALIZE YOUR SEARCH PLEASE ENTER THE DETAILS BELOW:</h4>
 
             <form class="params">
-                
-                <input type="text" class="search dest" placeholder="Enter the destination airports abreviated name! eg. (ord, lax)">
+                <h2 class="departure">Departure from</h2>
+                <input type="text" class="search dest" placeholder="Enter the airport code for the destination you wish to fly">
                 <input type="text" class="search city" placeholder="Enter the full city name of your destination">
                     <label for='depart'></label>
                     <span>Depart <input type="date" class="search from"> </span>
