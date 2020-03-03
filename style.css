@@ -7,7 +7,7 @@
 html{
   height:100vh;
   width:100vw;
-  background-image: url("https://cdn.pixabay.com/photo/2017/12/15/13/51/polynesia-3021072_1280.jpg");
+  background-image: url("https://images.pexels.com/photos/1482193/pexels-photo-1482193.jpeg?cs=srgb&dl=sailboat-sailing-on-water-near-island-1482193.jpg&fm=jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -25,21 +25,24 @@ a:hover{
 }
 .help{
   position: absolute;
-  color: white;
-  font-size: 25px;
+  font-size: 20px;
+  color: salmon;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
   top:20px;
   right:15px;
 }
 
 
 .topheaders{
-  color: black;
-  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
-  font-size: 25px;
+  color: salmon;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+  font-size: 30px;
   margin-top:15vh;
   text-align:center;
    
 }
+
+
 
 .searchBox{
   margin-top: 20vh;
@@ -48,14 +51,14 @@ a:hover{
 
 .frontsearch{
   width:75vw;
-  outline: 3px solid black;
+  outline: 3px solid salmon;
   border-color: black;
   font-size: 25px;
   
 }
 
 .locEnter{
-  outline: 3px solid black;
+  outline: 3px solid salmon;
   
 }
 
@@ -71,8 +74,8 @@ input::placeholder{
 }
 
 .parameterPage h4{
-  color: black;
-  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+  color: salmon;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
   font-size:22px;
   padding-top: 5vh;
   padding-bottom: -5vh;
@@ -81,8 +84,8 @@ input::placeholder{
 
 .parameterPage h2{
   font-size: 4vh;
-  color: black;
-  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+  color: salmon;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
   text-align: center;
 }
 .params{
@@ -99,17 +102,30 @@ input::placeholder{
   height:6vh;
   width:30vw;
   margin:0 auto;
-  outline: black solid 2px;
+  outline: salmon solid 2px;
+  background-color: salmon;
+  border:none;
+  color:black; 
 }
 
 .params input[type=text], input[type=date]{
-  font-size:10px;
+  font-size:20px;
   width:65vw;
   height:45px;
-  outline: black solid 2px;
+  outline: salmon solid 2px;
   margin-left:auto;
   margin-right:auto;
 
+}
+
+label {
+  background-color: black;
+  color: salmon;
+  font-size: 25px ;
+  margin: 0 auto -15px;
+  border-radius: 6px;
+  text-align: center;
+  width: 30vw;
 }
 
 .resultsPage {
@@ -119,8 +135,8 @@ input::placeholder{
 }
 
 .resultsPage h1 {
-  color: black;
-  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+  color: salmon;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
   text-align: center;
   list-style-type: none;
   padding-left: 0;
@@ -138,7 +154,7 @@ input::placeholder{
   cursor: pointer;
 }
 .resultsPage a:visited{
-  color:black;
+  color:salmon;
 }
 .resultsPage a:link {
   color:white;

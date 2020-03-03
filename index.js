@@ -211,6 +211,7 @@ function clearResults() {
     $('.resultsPage').find('.rRes').empty()
     $('.resultsPage').find('.wReport').empty()
     $('.resultsPage').find('.weatherResults').empty()
+    $('.params').find('.departure').empty().append('Departing from')
     $('.resultsPage').hide()
     $('.homePage').show()
 }
