@@ -49,6 +49,12 @@ a:hover{
   width:75vw;
 }
 
+input::placeholder{
+  
+  color:black;
+  font-size: 2.8vh;
+}
+
 .parameterPage{
  margin-left:auto;
  margin-right:auto;
@@ -61,6 +67,9 @@ a:hover{
 }
 
 .parameterPage h2{
+  font-size: 3vh;
+  border:black;
+  color: white;
   text-align: center;
 }
 .params{
@@ -72,10 +81,17 @@ a:hover{
   justify-content: space-evenly;
 }
 
+.paramEnter{
+  font-size: 2vh;
+  height:6vh;
+  width:30vw;
+  margin:0 auto;
+}
+
 .params input[type=text], input[type=date]{
-  font-size:15px;
+  font-size:10px;
   width:65vw;
-  height:20px;
+  height:45px;
   margin-left:auto;
   margin-right:auto;
 }
@@ -129,8 +145,8 @@ span{
 (min-width: 700px)
 
 {
- 
 
+  
 
   .homePage{
     height:90vh;
@@ -163,17 +179,6 @@ span{
     
     
   }
-
-  .params input[type=submit]{
-    height:37px;
-    font-size:25px;
-    margin-right:auto;
-    margin-left:auto;
-    width:10vw;
-
-  }
-
-  
 
   .resultsPage h1 {
     font-size: 35px;

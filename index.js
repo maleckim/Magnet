@@ -174,9 +174,17 @@ function weatherForecast(responseJson) {
 
 }
 
+function clearResults(){
+        $('.resultsPage').find('.fRes').empty()
+        $('.resultsPage').find('.rRes').empty()
+        $('.resultsPage').find('.wReport').empty()
+        $('.resultsPage').find('.weatherResults').empty()
+}
+
 function newSearch() {
     $('.newSearch').on('click', function (e) {
         $('.newSearch').hide()
+        clearResults()
         $('.homePage').show()
     })
 }
