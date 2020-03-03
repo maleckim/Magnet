@@ -209,7 +209,7 @@ function weatherForecast(responseJson) {
 function clearResults() {
     $('.resultsPage').find('.fRes').empty()
     $('.resultsPage').find('.rRes').empty()
-    $('.resultsPage').find('.wReport').empty()
+    $('.resultsPage').find('.wReport').empty().append('Weather Results')
     $('.resultsPage').find('.weatherResults').empty()
     $('.params').find('.departure').empty().append('Departing from')
     $('.resultsPage').hide()
