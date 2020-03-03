@@ -25,15 +25,16 @@ a:hover{
 }
 .help{
   position: absolute;
-  color:white;
-  font-size: 15px;
-  top:15px;
+  color: white;
+  font-size: 25px;
+  top:20px;
   right:15px;
 }
 
 
 .topheaders{
-  color:white;
+  color: black;
+  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
   font-size: 25px;
   margin-top:15vh;
   text-align:center;
@@ -47,6 +48,15 @@ a:hover{
 
 .frontsearch{
   width:75vw;
+  outline: 3px solid black;
+  border-color: black;
+  font-size: 25px;
+  
+}
+
+.locEnter{
+  outline: 3px solid black;
+  
 }
 
 input::placeholder{
@@ -61,15 +71,18 @@ input::placeholder{
 }
 
 .parameterPage h4{
-  color:white;
+  color: black;
+  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
   font-size:22px;
+  padding-top: 5vh;
+  padding-bottom: -5vh;
   text-align: center;
 }
 
 .parameterPage h2{
-  font-size: 3vh;
-  border:black;
-  color: white;
+  font-size: 4vh;
+  color: black;
+  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
   text-align: center;
 }
 .params{
@@ -82,18 +95,21 @@ input::placeholder{
 }
 
 .paramEnter{
-  font-size: 2vh;
+  font-size: 3vh;
   height:6vh;
   width:30vw;
   margin:0 auto;
+  outline: black solid 2px;
 }
 
 .params input[type=text], input[type=date]{
   font-size:10px;
   width:65vw;
   height:45px;
+  outline: black solid 2px;
   margin-left:auto;
   margin-right:auto;
+
 }
 
 .resultsPage {
@@ -102,15 +118,16 @@ input::placeholder{
   
 }
 
-.resultsPage h1,ul {
-  color:white;
+.resultsPage h1 {
+  color: black;
+  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
   text-align: center;
   list-style-type: none;
   padding-left: 0;
 }
 
 .flightResults, .restaurantResults, .weatherResults{
-  
+  color:white;
   background: rgba(0,0,0,.5);
   width: 60vw;
   margin-left: auto;

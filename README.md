@@ -10,9 +10,7 @@ resultspage:
 <img src='https://github.com/maleckim/Magnet/raw/master/images/Results.PNG'>
 
 
-Summary: This is a simple travel app which helps give some information on possible travel plans. You input your departure airport[home],
-from there you are taken to a page[Search] which requires the destination airport, two dates (for flight information) and a city name
-(used for populating the highest rated local restaurants relative to city input, and also the current weather). finally, the information on flight prices, local cuisine, and weather are displayed[Results].
+Summary: This is a simple travel app which helps give some information on a possible upcoming trip. The user enters their local and destination airport, along with departure and return dates. The app then returns information on flight prices, weather, and local cuisine. 
 
 technologies used: HTML, CSS, JQUERY, JAVASCRIPT
 

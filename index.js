@@ -19,6 +19,18 @@ let valid = function (e) {
     return false;
 }
 
+function errorHandler(status) {
+    if (!status) {
+        alert('request could not be processed, check spelling')
+        clearResults()
+        $('.homePage').show()
+    } else { return null }
+}
+
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 function nextPage() {
     $('.locEnter').on('click', function (e) {
         flyFrom = $('input[class="frontsearch"]').val();
@@ -64,22 +76,21 @@ function genericFetch(url, callback) {
 
     fetch(url)
         .then(response => {
+
             if (response.ok) {
                 return response.json();
             }
 
             throw Error(response.statusText);
-
         })
         .then(responseJSON => {
+
             callback(responseJSON);
         })
         .catch(error => {
-            if (alert(`${flyTo} is not a valid entry. Make sure you are entering the airport code`)) { }
-            else { $('.parameterPage').show() }
+            if (alert(`oops, something went wrong. Please reload and try again`)) { }
+            else { return clearResults() }
         })
-
-
 }
 
 function genericFetchOptions(url, callback) {
@@ -90,6 +101,7 @@ function genericFetchOptions(url, callback) {
         })
     };
 
+
     fetch(url, options)
         .then(response => {
             if (response.ok) {
@@ -98,13 +110,13 @@ function genericFetchOptions(url, callback) {
             throw Error(response.statusText);
         })
         .then(responseJSON => {
+
             callback(responseJSON);
         })
         .catch(error => {
-            alert(`${city} is not a valid city, please check your spelling`)
+            alert(`oops, something went wrong. Please reload and try again`)
             $('.parameterPage').show()
         })
-
 
 }
 
@@ -114,16 +126,41 @@ function generateFlightURL() {
 }
 
 function displayFlightResults(responseJson) {
+
+    if (responseJson.data.length == 0) {
+        return errorHandler();
+    }
+
+    let seen = {};
+
     for (let i = 0; i < responseJson.data.length; i++) {
+
+        let depart = responseJson.data[i].dTime;
+        let arrive = responseJson.data[i].aTime;
+        let departTime = new Date(0);
+        let arriveTime = new Date(0);
+        departTime.setUTCSeconds(depart);
+        arriveTime.setUTCSeconds(arrive);
+        departTime = departTime.toTimeString().slice(0, 5)
+        arriveTime = arriveTime.toTimeString().slice(0, 5)
+
+        if (seen[departTime]) {
+            continue
+        } else { seen[departTime] = true }
+
+
+
         $('.test').hide();
         $('.resultsPage').show();
-        $('.resultsPage').find('.fRes').append(`<li><a target="blank" href=${responseJson.data[i].deep_link}> ${responseJson.data[i].flyFrom}=>${responseJson.data[i].flyTo}</a> Price:$ ${responseJson.data[i].price}</li>`)
+        $('.resultsPage').find('.fRes').append(`<li>${departTime}>${arriveTime}<a target="blank" href=${responseJson.data[i].deep_link}> ${responseJson.data[i].flyFrom}=>${responseJson.data[i].flyTo}</a> Price:$ ${responseJson.data[i].price}</li>`)
         $('.newSearch').show()
     }
 }
 
 
-function flightFetcher() {
+
+
+async function flightFetcher() {
     let url = generateFlightURL();
 
     genericFetch(url, displayFlightResults)
@@ -169,18 +206,19 @@ function weatherForecast(responseJson) {
 
 }
 
-function clearResults(){
-        $('.resultsPage').find('.fRes').empty()
-        $('.resultsPage').find('.rRes').empty()
-        $('.resultsPage').find('.wReport').empty()
-        $('.resultsPage').find('.weatherResults').empty()
+function clearResults() {
+    $('.resultsPage').find('.fRes').empty()
+    $('.resultsPage').find('.rRes').empty()
+    $('.resultsPage').find('.wReport').empty()
+    $('.resultsPage').find('.weatherResults').empty()
+    $('.resultsPage').hide()
+    $('.homePage').show()
 }
 
 function newSearch() {
     $('.newSearch').on('click', function (e) {
         $('.newSearch').hide()
         clearResults()
-        $('.homePage').show()
     })
 }
 
