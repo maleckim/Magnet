@@ -1,9 +1,4 @@
-let flyFrom = null;
-let flyTo = null;
-let fromDate = null;
-let toDate = null;
-let city = null;
-
+let flyFrom, flyTo, fromDate, toDate, city;
 
 
 const options = {
