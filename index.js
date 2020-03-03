@@ -62,6 +62,8 @@ function getParams() {
             restaurantFetch(city);
             weatherFetch();
         } else {
+            flyTo = '';
+            $('.dest').val('');
             alert('please enter a valid airport code.')
         }
 
